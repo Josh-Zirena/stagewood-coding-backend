@@ -2,8 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 
-// const cors = require('cors');
-
 const { User } = require('./sequelize');
 
 const app = express();
@@ -13,12 +11,6 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.send('Route placeholder');
 })
-
-// // TODO: I know I will need to add CORS for the frontend
-// // but not sure how it will look yet.
-// app.get('/cors', cors(), (req, res) => {
-//     res.json({msg: 'This route is CORS-enabled.'});
-// })
 
 async function generatePassword(plainTextPassword) {
     const saltRounds = 10;
