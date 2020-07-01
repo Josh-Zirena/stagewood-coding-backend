@@ -9,14 +9,10 @@ async function generatePassword(plainTextPassword) {
 }
 
 router.get('/', (req, res) => {
-    res.send('Route Placeholder');
-})
-
-router.get('/register', (req, res) => {
-    res.json({"hello": "hi"});
+    res.json({"route": "register"});
 });
 
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
     const { name, email } = req.body;
     const plainTextPassword = req.body.password;
 
